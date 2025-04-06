@@ -1,0 +1,131 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth - ISRO Cargo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/auth.css">
+    <script defer src="../static/js/auth.js"></script>
+</head>
+<body>
+    <div class="auth-container">
+
+        <div class="form-box" id="login-box">
+            <p id="login-error" class="error-message"></p>
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Username" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+
+    <div class="remember-me">
+        <input type="checkbox" id="remember-me">
+        <label for="remember-me">Remember Me</label>
+    </div>
+
+            <button id="login-btn" class="btn" onclick="validateLogin()">
+                <span id="login-text">Login</span>
+                <span id="login-spinner" class="spinner hidden">🔄</span>
+            </button>
+    
+            <p><a href="#" onclick="showForgotPassword()">Forgot Password?</a></p>
+            <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+        </div>
+        
+
+        <div id="custom-cursor"></div>
+
+
+        <div class="form-box hidden" id="signup-box">
+            <p id="signup-error" class="error-message"></p>
+            <h2>Sign Up</h2>
+            <input type="text" id="signup-username" placeholder="Username" required>
+            <input type="email" id="signup-email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+
+            <button id="signup-btn" class="btn" onclick="validateSignup()">
+                <span id="signup-text">Sign Up</span>
+                <span id="signup-spinner" class="spinner hidden">🔄</span>
+            </button>
+
+            <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+        </div>
+        
+   
+        <div class="form-box hidden" id="forgot-password-box">
+            <p id="forgot-error" class="error-message"></p>
+            <h2>Forgot Password</h2>
+            <input type="email" id="forgot-email" placeholder="Enter your email" required>
+
+            <button id="forgot-btn" class="btn" onclick="validateForgotPassword()">
+                <span id="forgot-text">Reset Password</span>
+                <span id="forgot-spinner" class="spinner hidden">🔄</span>
+            </button>
+
+            <p>Back to <a href="#" onclick="showLogin()">Login</a></p>
+        </div>
+    </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Cargo Auth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/auth.css">
+</head>
+<body>
+    <div id="custom-cursor"></div>
+    
+    <!-- Login Container -->
+    <div class="auth-container" id="login-box">
+        <form id="login-form" onsubmit="return validateLogin(event)">
+            <h2>Login</h2>
+            <input type="text" id="login-username" name="username" placeholder="Username" required>
+            <input type="password" id="login-password" name="password" placeholder="Password" required>
+            <div class="remember-me">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember Me</label>
+            </div>
+            <p id="login-error" class="error-message"></p>
+            <button type="submit" id="login-btn" class="btn">
+                <span id="login-text">Login</span>
+                <span id="login-spinner" class="spinner hidden">⏳</span>
+            </button>
+        </form>
+        <p><a href="#" onclick="showForgotPassword()">Forgot Password?</a></p>
+        <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+    </div>
+
+    <!-- Signup Container -->
+    <div class="auth-container hidden" id="signup-box">
+        <form id="signup-form" onsubmit="return validateSignup(event)">
+            <h2>Sign Up</h2>
+            <input type="text" id="signup-username" name="username" placeholder="Username" required>
+            <input type="email" id="signup-email" name="email" placeholder="Email Address" required>
+            <input type="password" id="signup-password" name="password" placeholder="Password" required>
+            <input type="password" id="signup-confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+            <p id="signup-error" class="error-message"></p>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+    </div>
+
+    <!-- Forgot Password Container -->
+    <div class="auth-container hidden" id="forgot-password-box">
+        <form id="forgot-password-form" onsubmit="return validateForgotPassword(event)">
+            <h2>Reset Password</h2>
+            <input type="email" id="forgot-email" name="email" placeholder="Enter your email" required>
+            <p id="forgot-error" class="error-message"></p>
+            <button type="submit" class="btn">Send Reset Link</button>
+        </form>
+        <p><a href="#" onclick="showLogin()">Back to Login</a></p>
+    </div>
+
+    <script src="/static/js/auth.js"></script>
+</body>
+</html>
